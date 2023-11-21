@@ -6,8 +6,8 @@
       <class name="HomePageTest">
         <methods>
           <include name="tearDown"/>
-          <include name="verifyDmDeskIconIsVisible"/>
           <include name="setup"/>
+          <include name="createArticle"/>
         </methods>
       </class> <!-- HomePageTest -->
     </classes>

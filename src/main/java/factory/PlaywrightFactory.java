@@ -7,6 +7,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 public class PlaywrightFactory {
@@ -32,18 +33,22 @@ public class PlaywrightFactory {
         switch (browserName.toLowerCase()) {
             case "chromium":
                 browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+                browser.newContext(new Browser.NewContextOptions().setStorageStatePath(Paths.get("applogin.json")));
                 break;
 
             case "firefox":
                 browser = playwright.firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
+                browser.newContext(new Browser.NewContextOptions().setStorageStatePath(Paths.get("applogin.json")));
                 break;
 
             case "safari":
                 browser = playwright.webkit().launch(new BrowserType.LaunchOptions().setHeadless(false));
+                browser.newContext(new Browser.NewContextOptions().setStorageStatePath(Paths.get("applogin.json")));
                 break;
 
             case "chrome":
                 browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+                browser.newContext(new Browser.NewContextOptions().setStorageStatePath(Paths.get("applogin.json")));
                 break;
 
             default:

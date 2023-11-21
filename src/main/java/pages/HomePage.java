@@ -36,6 +36,12 @@ public class HomePage  {
 
    }
 
+   public ArticlePage createNewArticle(){
+      page.click(createNewDD);
+      page.click(createArticle);
+      return new ArticlePage(page) ;
+
+   }
 
 
 

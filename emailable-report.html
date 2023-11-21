@@ -8,16 +8,22 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Default Suite</th></tr>
-<tr><td><a href="#t0">DeskAutomationPOM</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">6,603</td><td></td><td></td></tr>
+<tr><th colspan="8">Regression Suite</th></tr>
+<tr><td><a href="#t0">Login Test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">6,527</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">Home Page Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">4,648</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">3</th><th class="num">0</th><th class="num">0</th><th class="num attn">1</th><th class="num">11,175</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">DeskAutomationPOM &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">HomePageTest</td><td><a href="#m0">verifyDmDeskIconIsVisible</a></td><td rowspan="1">1700500609122</td><td rowspan="1">28</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Regression Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Login Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">LoginTest</td><td><a href="#m0">appLoginTest</a></td><td rowspan="1">1700569182544</td><td rowspan="1">120</td></tr><tr class="passedeven"><td><a href="#m1">loginPageTitleTest</a></td><td rowspan="1">1700569182694</td><td rowspan="1">4</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">Home Page Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">HomePageTest</td><td><a href="#m2">createArticle</a></td><td rowspan="1">1700569187347</td><td rowspan="1">1</td></tr><tr><th colspan="4">Home Page Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">HomePageTest</td><td><a href="#m3">verifyDmDeskIconIsVisible</a></td><td rowspan="1">1700569187353</td><td rowspan="1">17</td></tr></tbody>
 </table>
-<h2>DeskAutomationPOM</h2><h3 id="m0">HomePageTest#verifyDmDeskIconIsVisible</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
-	at HomePageTest.verifyDmDeskIconIsVisible(HomePageTest.java:8)
+<h2>Login Test</h2><h3 id="m0">LoginTest#appLoginTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">LoginTest#loginPageTitleTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Home Page Test</h2><h3 id="m2">HomePageTest#createArticle</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
+	at HomePageTest.createArticle(HomePageTest.java:18)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1510)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
 ... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">HomePageTest#verifyDmDeskIconIsVisible</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

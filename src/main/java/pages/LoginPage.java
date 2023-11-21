@@ -24,24 +24,28 @@ public class LoginPage {
         return page.title();
     }
 
-    public String getHomePageURL() {
+    public String getLoginpageUrl() {
         String url = page.url();
         System.out.println("Page URL : " + url);
         return page.url();
 
+            }
 
+    public HomePage sharePage(){
+        return new HomePage(page);
     }
 
     public HomePage doLogin(String appUserName, String appPassWord) {
         page.fill(userName, appUserName);
         page.fill(passWord, appPassWord);
         page.click(loginButton);
-        /*if (page.isVisible(dmDeskIcon)) {        //return new HomePage(page);
+        if (page.isVisible(dmDeskIcon)) {        //return new HomePage(page);
             System.out.println("User is successfully login .....");
-            return true;
+           // return true;
         }
-        return false;
-    }*/
+        //return false;
+
         return new HomePage(page);
     }
 }
+

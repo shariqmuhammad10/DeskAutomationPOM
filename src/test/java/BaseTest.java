@@ -1,7 +1,9 @@
+import com.beust.ah.A;
 import com.microsoft.playwright.Page;
 import factory.PlaywrightFactory;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import pages.ArticlePage;
 import pages.HomePage;
 import pages.LoginPage;
 
@@ -15,6 +17,7 @@ public class BaseTest {
     Properties prop;
     protected LoginPage loginPage;
     protected HomePage homePage;
+    protected ArticlePage articlePage;
 
 
 
@@ -24,7 +27,8 @@ public class BaseTest {
         prop = pf.init_prop();
         page = pf.initBrowser(prop);
         //loginTest.appLoginTest();
-        page = pf.appLogin("sysadmin","sysadmin");
+        //page = pf.appLogin(Properties prop);
+        //page = pf.appLogin("sysadmin","sysadmin");
         loginPage = new LoginPage(page);
 
 
