@@ -2,12 +2,15 @@
 
 import org.testng.Assert;
 import org.testng.annotations.*;
+import pages.HomePage;
 
 public class LoginTest extends BaseTest {
 
     @Test
     public void appLoginTest(){
-        loginPage.doLogin(prop.getProperty("userName").trim(), prop.getProperty("passWord").trim());
+        loginPage.doLogin(prop.getProperty("userName").trim(),
+                prop.getProperty("passWord").trim());
+
     }
 
 

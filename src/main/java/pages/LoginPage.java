@@ -10,7 +10,9 @@ public class LoginPage {
     private Page page;
     private String userName = "#usernameInput";
     private String passWord = "#passwordInput";
-    private String loginButton =".btn.btn-primary";
+    private String loginButton = ".btn.btn-primary";
+
+    private String dmDeskIcon = ".dam-home-icon.hidden-sm.hidden-xs";
 
     public LoginPage(Page page) {
         this.page = page;
@@ -31,14 +33,15 @@ public class LoginPage {
     }
 
     public HomePage doLogin(String appUserName, String appPassWord) {
-        //String userNameValue = prop.getProperty("username");
-        //String passWordValue = prop.getProperty("password");
-
-        page.fill(userName, appUserName );
-        page.fill(passWord,appPassWord);
+        page.fill(userName, appUserName);
+        page.fill(passWord, appPassWord);
         page.click(loginButton);
+        /*if (page.isVisible(dmDeskIcon)) {        //return new HomePage(page);
+            System.out.println("User is successfully login .....");
+            return true;
+        }
+        return false;
+    }*/
         return new HomePage(page);
-
-
     }
 }

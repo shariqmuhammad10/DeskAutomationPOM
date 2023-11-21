@@ -16,6 +16,12 @@ public class PlaywrightFactory {
     Page page;
     Properties prop;
 
+    private String userName = "#usernameInput";
+    private String passWord = "#passwordInput";
+    private String loginButton = ".btn.btn-primary";
+
+    private String dmDeskIcon = ".dam-home-icon.hidden-sm.hidden-xs";
+
 
     public Page initBrowser(Properties prop) {
         String browserName = prop.getProperty("browser").trim();
@@ -65,4 +71,15 @@ public class PlaywrightFactory {
                 return prop;
         }
 
-}
+    public Page appLogin(String appUserName, String appPassWord) {
+        page.fill(userName, appUserName);
+        page.fill(passWord, appPassWord);
+        page.click(loginButton);
+       // if (page.isVisible(dmDeskIcon)) {        //return new HomePage(page);
+            System.out.println("User is successfully login .....");
+            return page;
+        }
+
+    }
+
+

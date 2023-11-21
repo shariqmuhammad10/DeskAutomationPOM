@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="DeskAutomationPOM(failed)">
     <classes>
-      <class name="LoginTest">
+      <class name="HomePageTest">
         <methods>
-          <include name="appLoginTest"/>
           <include name="tearDown"/>
+          <include name="verifyDmDeskIconIsVisible"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- LoginTest -->
+      </class> <!-- HomePageTest -->
     </classes>
   </test> <!-- DeskAutomationPOM(failed) -->
 </suite> <!-- Failed suite [Default Suite] -->

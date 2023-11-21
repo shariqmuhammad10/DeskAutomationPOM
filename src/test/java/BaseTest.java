@@ -17,13 +17,26 @@ public class BaseTest {
     protected HomePage homePage;
 
 
+
     @BeforeTest
     public void setup() throws FileNotFoundException {
         pf = new PlaywrightFactory();
         prop = pf.init_prop();
         page = pf.initBrowser(prop);
+        //loginTest.appLoginTest();
+        page = pf.appLogin("sysadmin","sysadmin");
         loginPage = new LoginPage(page);
-    }
+
+
+        }
+
+
+
+        //loginPage.doLogin(prop.getProperty("userName").trim(),
+                //prop.getProperty("passWord").trim());
+
+
+
 
     @AfterTest
     public void tearDown(){
