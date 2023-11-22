@@ -1,7 +1,9 @@
 import com.beust.ah.A;
 import com.microsoft.playwright.Page;
 import factory.PlaywrightFactory;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import pages.ArticlePage;
 import pages.HomePage;
@@ -21,14 +23,14 @@ public class BaseTest {
 
 
 
-    @BeforeTest
+    @BeforeClass
     public void setup() throws FileNotFoundException {
         pf = new PlaywrightFactory();
         prop = pf.init_prop();
         page = pf.initBrowser(prop);
-        //loginTest.appLoginTest();
+       // loginTest.appLoginTest();
         //page = pf.appLogin(Properties prop);
-        //page = pf.appLogin("sysadmin","sysadmin");
+        page = pf.appLogin("sysadmin","sysadmin");
         loginPage = new LoginPage(page);
 
 
@@ -42,7 +44,7 @@ public class BaseTest {
 
 
 
-    @AfterTest
+    @AfterClass
     public void tearDown(){
         page.context().browser().close();
 

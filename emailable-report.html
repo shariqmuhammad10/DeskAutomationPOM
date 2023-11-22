@@ -9,21 +9,29 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Regression Suite</th></tr>
-<tr><td><a href="#t0">Login Test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">6,527</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t1">Home Page Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">4,648</td><td></td><td></td></tr>
-<tr><th>Total</th><th class="num">3</th><th class="num">0</th><th class="num">0</th><th class="num attn">1</th><th class="num">11,175</th><th colspan="2"></th></tr>
+<tr><td><a href="#t0">Login Test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">5,747</td><td></td><td></td></tr>
+<tr class="stripe"><td><a href="#t1">Home Page Test</a></td><td class="num">11</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">9,008</td><td></td><td></td></tr>
+<tr><th>Total</th><th class="num">11</th><th class="num">0</th><th class="num">0</th><th class="num attn">1</th><th class="num">14,755</th><th colspan="2"></th></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Regression Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Login Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">LoginTest</td><td><a href="#m0">appLoginTest</a></td><td rowspan="1">1700569182544</td><td rowspan="1">120</td></tr><tr class="passedeven"><td><a href="#m1">loginPageTitleTest</a></td><td rowspan="1">1700569182694</td><td rowspan="1">4</td></tr></tbody>
-<tbody id="t1"><tr><th colspan="4">Home Page Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">HomePageTest</td><td><a href="#m2">createArticle</a></td><td rowspan="1">1700569187347</td><td rowspan="1">1</td></tr><tr><th colspan="4">Home Page Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">HomePageTest</td><td><a href="#m3">verifyDmDeskIconIsVisible</a></td><td rowspan="1">1700569187353</td><td rowspan="1">17</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Regression Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Login Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">LoginTest</td><td><a href="#m0">loginPageTitleTest</a></td><td rowspan="1">1700671302619</td><td rowspan="1">38</td></tr></tbody>
+<tbody id="t1"><tr><th colspan="4">Home Page Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="11">HomePageTest</td><td><a href="#m1">appLogout</a></td><td rowspan="1">1700671311557</td><td rowspan="1">163</td></tr><tr class="passedeven"><td><a href="#m2">checkFacetsVisibility</a></td><td rowspan="1">1700671311525</td><td rowspan="1">3</td></tr><tr class="passedeven"><td><a href="#m3">checkFoldersMenuVisibility</a></td><td rowspan="1">1700671311530</td><td rowspan="1">4</td></tr><tr class="passedeven"><td><a href="#m4">checkPseriesMenuVisibility</a></td><td rowspan="1">1700671311537</td><td rowspan="1">4</td></tr><tr class="passedeven"><td><a href="#m5">checkQuriesMenuVisibility</a></td><td rowspan="1">1700671311543</td><td rowspan="1">2</td></tr><tr class="passedeven"><td><a href="#m6">checkSchedulingMenuVisibility</a></td><td rowspan="1">1700671311547</td><td rowspan="1">4</td></tr><tr class="passedeven"><td><a href="#m7">clickRefreshBtn</a></td><td rowspan="1">1700671311553</td><td rowspan="1">2</td></tr><tr class="passedeven"><td><a href="#m8">createArticle</a></td><td rowspan="1">1700671311387</td><td rowspan="1">95</td></tr><tr class="passedeven"><td><a href="#m9">fullScreenOption</a></td><td rowspan="1">1700671311484</td><td rowspan="1">39</td></tr><tr class="passedeven"><td><a href="#m10">generalSearch</a></td><td rowspan="1">1700671307137</td><td rowspan="1">4247</td></tr><tr class="passedeven"><td><a href="#m11">verifyDmDeskIconIsVisible</a></td><td rowspan="1">1700671307128</td><td rowspan="1">7</td></tr></tbody>
 </table>
-<h2>Login Test</h2><h3 id="m0">LoginTest#appLoginTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">LoginTest#loginPageTitleTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>Home Page Test</h2><h3 id="m2">HomePageTest#createArticle</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
-	at HomePageTest.createArticle(HomePageTest.java:18)
+<h2>Login Test</h2><h3 id="m0">LoginTest#loginPageTitleTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [dm.desk1] but found [dm.desk]
+	at LoginTest.loginPageTitleTest(LoginTest.java:20)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1510)
 	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
-... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">HomePageTest#verifyDmDeskIconIsVisible</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Home Page Test</h2><h3 id="m1">HomePageTest#appLogout</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">HomePageTest#checkFacetsVisibility</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">HomePageTest#checkFoldersMenuVisibility</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">HomePageTest#checkPseriesMenuVisibility</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">HomePageTest#checkQuriesMenuVisibility</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">HomePageTest#checkSchedulingMenuVisibility</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">HomePageTest#clickRefreshBtn</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">HomePageTest#createArticle</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">HomePageTest#fullScreenOption</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">HomePageTest#generalSearch</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">HomePageTest#verifyDmDeskIconIsVisible</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

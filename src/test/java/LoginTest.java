@@ -6,18 +6,18 @@ import pages.HomePage;
 
 public class LoginTest extends BaseTest {
 
-    @Test
+    /*@Test
     public void appLoginTest(){
         loginPage.doLogin(prop.getProperty("userName").trim(),
                 prop.getProperty("passWord").trim());
 
-    }
+    }*/
 
 
     @Test
     public void loginPageTitleTest(){
       String actualTitle   = loginPage.getLoginPageTitle();
-      Assert.assertEquals(actualTitle,"dm.desk");
+      Assert.assertEquals(actualTitle,"dm.desk1");
 
     }
 

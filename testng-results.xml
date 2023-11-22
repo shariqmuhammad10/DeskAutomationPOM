@@ -1,41 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
+<testng-results ignored="0" total="12" passed="11" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-21T17:19:36 PKT" name="Regression Suite" finished-at="2023-11-21T17:19:47 PKT" duration-ms="11189">
+  <suite started-at="2023-11-22T21:41:37 PKT" name="Regression Suite" finished-at="2023-11-22T21:41:51 PKT" duration-ms="14772">
     <groups>
     </groups>
-    <test started-at="2023-11-21T17:19:36 PKT" name="Login Test" finished-at="2023-11-21T17:19:42 PKT" duration-ms="6527">
+    <test started-at="2023-11-22T21:41:37 PKT" name="Login Test" finished-at="2023-11-22T21:41:42 PKT" duration-ms="5747">
       <class name="LoginTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:LoginTest@11bd0f3b]" started-at="2023-11-21T17:19:36 PKT" name="setup" finished-at="2023-11-21T17:19:42 PKT" duration-ms="6231" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:LoginTest@73ee04c8]" started-at="2023-11-22T21:41:37 PKT" name="setup" finished-at="2023-11-22T21:41:42 PKT" duration-ms="5519" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="appLoginTest()[pri:0, instance:LoginTest@11bd0f3b]" started-at="2023-11-21T17:19:42 PKT" name="appLoginTest" finished-at="2023-11-21T17:19:42 PKT" duration-ms="120" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- appLoginTest -->
-        <test-method signature="loginPageTitleTest()[pri:0, instance:LoginTest@11bd0f3b]" started-at="2023-11-21T17:19:42 PKT" name="loginPageTitleTest" finished-at="2023-11-21T17:19:42 PKT" duration-ms="4" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginPageTitleTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:LoginTest@11bd0f3b]" started-at="2023-11-21T17:19:42 PKT" name="tearDown" finished-at="2023-11-21T17:19:42 PKT" duration-ms="117" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- LoginTest -->
-    </test> <!-- Login Test -->
-    <test started-at="2023-11-21T17:19:42 PKT" name="Home Page Test" finished-at="2023-11-21T17:19:47 PKT" duration-ms="4648">
-      <class name="HomePageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:HomePageTest@101952da]" started-at="2023-11-21T17:19:42 PKT" name="setup" finished-at="2023-11-21T17:19:47 PKT" duration-ms="4513" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="createArticle()[pri:0, instance:HomePageTest@101952da]" started-at="2023-11-21T17:19:47 PKT" name="createArticle" finished-at="2023-11-21T17:19:47 PKT" duration-ms="1" status="FAIL">
-          <exception class="java.lang.NullPointerException">
+        <test-method signature="loginPageTitleTest()[pri:0, instance:LoginTest@73ee04c8]" started-at="2023-11-22T21:41:42 PKT" name="loginPageTitleTest" finished-at="2023-11-22T21:41:42 PKT" duration-ms="38" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [dm.desk1] but found [dm.desk]]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at HomePageTest.createArticle(HomePageTest.java:18)
+              <![CDATA[java.lang.AssertionError: expected [dm.desk1] but found [dm.desk]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at LoginTest.loginPageTitleTest(LoginTest.java:20)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -65,15 +54,67 @@ at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
 at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createArticle -->
-        <test-method signature="verifyDmDeskIconIsVisible()[pri:0, instance:HomePageTest@101952da]" started-at="2023-11-21T17:19:47 PKT" name="verifyDmDeskIconIsVisible" finished-at="2023-11-21T17:19:47 PKT" duration-ms="17" status="PASS">
+        </test-method> <!-- loginPageTitleTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:LoginTest@73ee04c8]" started-at="2023-11-22T21:41:42 PKT" name="tearDown" finished-at="2023-11-22T21:41:42 PKT" duration-ms="134" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- LoginTest -->
+    </test> <!-- Login Test -->
+    <test started-at="2023-11-22T21:41:42 PKT" name="Home Page Test" finished-at="2023-11-22T21:41:51 PKT" duration-ms="9008">
+      <class name="HomePageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:HomePageTest@6c130c45]" started-at="2023-11-22T21:41:42 PKT" name="setup" finished-at="2023-11-22T21:41:47 PKT" duration-ms="4286" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyDmDeskIconIsVisible()[pri:0, instance:HomePageTest@6c130c45]" started-at="2023-11-22T21:41:47 PKT" name="verifyDmDeskIconIsVisible" finished-at="2023-11-22T21:41:47 PKT" duration-ms="7" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDmDeskIconIsVisible -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:HomePageTest@101952da]" started-at="2023-11-21T17:19:47 PKT" name="tearDown" finished-at="2023-11-21T17:19:47 PKT" duration-ms="108" status="PASS">
+        <test-method signature="generalSearch()[pri:1, instance:HomePageTest@6c130c45]" started-at="2023-11-22T21:41:47 PKT" name="generalSearch" finished-at="2023-11-22T21:41:51 PKT" duration-ms="4247" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generalSearch -->
+        <test-method signature="createArticle()[pri:2, instance:HomePageTest@6c130c45]" started-at="2023-11-22T21:41:51 PKT" name="createArticle" finished-at="2023-11-22T21:41:51 PKT" duration-ms="95" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createArticle -->
+        <test-method signature="fullScreenOption()[pri:3, instance:HomePageTest@6c130c45]" started-at="2023-11-22T21:41:51 PKT" name="fullScreenOption" finished-at="2023-11-22T21:41:51 PKT" duration-ms="39" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fullScreenOption -->
+        <test-method signature="checkFacetsVisibility()[pri:4, instance:HomePageTest@6c130c45]" started-at="2023-11-22T21:41:51 PKT" name="checkFacetsVisibility" finished-at="2023-11-22T21:41:51 PKT" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkFacetsVisibility -->
+        <test-method signature="checkFoldersMenuVisibility()[pri:5, instance:HomePageTest@6c130c45]" started-at="2023-11-22T21:41:51 PKT" name="checkFoldersMenuVisibility" finished-at="2023-11-22T21:41:51 PKT" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkFoldersMenuVisibility -->
+        <test-method signature="checkPseriesMenuVisibility()[pri:6, instance:HomePageTest@6c130c45]" started-at="2023-11-22T21:41:51 PKT" name="checkPseriesMenuVisibility" finished-at="2023-11-22T21:41:51 PKT" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkPseriesMenuVisibility -->
+        <test-method signature="checkQuriesMenuVisibility()[pri:7, instance:HomePageTest@6c130c45]" started-at="2023-11-22T21:41:51 PKT" name="checkQuriesMenuVisibility" finished-at="2023-11-22T21:41:51 PKT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkQuriesMenuVisibility -->
+        <test-method signature="checkSchedulingMenuVisibility()[pri:8, instance:HomePageTest@6c130c45]" started-at="2023-11-22T21:41:51 PKT" name="checkSchedulingMenuVisibility" finished-at="2023-11-22T21:41:51 PKT" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkSchedulingMenuVisibility -->
+        <test-method signature="clickRefreshBtn()[pri:9, instance:HomePageTest@6c130c45]" started-at="2023-11-22T21:41:51 PKT" name="clickRefreshBtn" finished-at="2023-11-22T21:41:51 PKT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickRefreshBtn -->
+        <test-method signature="appLogout()[pri:10, instance:HomePageTest@6c130c45]" started-at="2023-11-22T21:41:51 PKT" name="appLogout" finished-at="2023-11-22T21:41:51 PKT" duration-ms="163" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- appLogout -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:HomePageTest@6c130c45]" started-at="2023-11-22T21:41:51 PKT" name="tearDown" finished-at="2023-11-22T21:41:51 PKT" duration-ms="128" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

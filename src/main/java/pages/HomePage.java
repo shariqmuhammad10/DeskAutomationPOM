@@ -2,12 +2,26 @@ package pages;
 
 import com.microsoft.playwright.Page;
 
+import java.net.SocketTimeoutException;
+
 
 public class HomePage  {
    private Page page;
 
    //Locators
    private String dmDeskIcon = ".dam-home-icon.hidden-sm.hidden-xs";
+
+   private String genSearch = "#searchvalueinput";
+
+   private String searchBtn = "#simple-search";
+
+   private String fullScreen= ".fullscreen-toggle";
+
+   private String refreshBtn = "i[ng-show='!querying']";
+
+   private String sysadminDD = ".dropdown-toggle.ng-binding";
+
+   private String logoutOption = "a[x-ng-click='logout()']";
    private String noResultFoundText= "div[class='panel-body'] strong[class='ng-binding']";
    private String createNewDD = ".hidden-sm.hidden-md.ng-binding";
 
@@ -34,6 +48,55 @@ public class HomePage  {
    public void checkDmDeskIconIsVisible() {
       page.isVisible(dmDeskIcon);
 
+   }
+
+   public void clickFullScreenOption (){
+
+      page.click(fullScreen);
+      System.out.println("Full screen is visible...");
+   }
+
+   public void facetsAvailable(){
+      page.isVisible(facetMenu);
+   }
+
+   public void foldersMenuAvilable(){
+      page.isVisible(foldersMenu);
+
+   }
+
+   public void pseriesMenuAvilable(){
+      page.isVisible(pSeriesMenu);
+
+   }
+
+   public void quriesMenuAvilable(){
+      page.isVisible(quriesMenu);
+
+   }
+
+   public void schedulingMenuAvailable(){
+      page.isVisible(schedulingMenu);
+
+   }
+
+   public void searchRefresh(){
+      page.isVisible(schedulingMenu);
+
+   }
+
+
+   public void genericSearch(){
+      page.click(genSearch);
+      page.fill(genSearch,"article");
+      page.click(searchBtn);
+      System.out.println("Search the content successfully....");
+
+   }
+
+   public void logoutFromSite (){
+      page.click(sysadminDD);
+      page.click(logoutOption);
    }
 
    public ArticlePage createNewArticle(){
