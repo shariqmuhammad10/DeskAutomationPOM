@@ -15,6 +15,8 @@ public class HomePage  {
 
    private String searchBtn = "#simple-search";
 
+   private String serachedArticle = "a[title='automation article'] span[class='ng-binding ng-scope']";
+
    private String fullScreen= ".fullscreen-toggle";
 
    private String refreshBtn = "i[ng-show='!querying']";
@@ -86,11 +88,12 @@ public class HomePage  {
    }
 
 
-   public void genericSearch(){
-      page.click(genSearch);
-      page.fill(genSearch,"article");
+   public String genericSearch(String articleName){
+      page.fill(genSearch,articleName);
       page.click(searchBtn);
-      System.out.println("Search the content successfully....");
+      String searchData = page.textContent(serachedArticle);
+      System.out.println("Searched content is :" + searchData);
+      return searchData;
 
    }
 

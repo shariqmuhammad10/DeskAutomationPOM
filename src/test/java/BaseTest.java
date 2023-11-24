@@ -36,13 +36,8 @@ public class BaseTest {
 
         }
 
-
-
         //loginPage.doLogin(prop.getProperty("userName").trim(),
                 //prop.getProperty("passWord").trim());
-
-
-
 
     @AfterClass
     public void tearDown(){

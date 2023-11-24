@@ -20,8 +20,8 @@ public class HomePageTest extends BaseTest {
     @Test (priority = 1)
     public void generalSearch(){
         homePage = loginPage.sharePage();
-        homePage.genericSearch();
-
+        String actualSearchData = homePage.genericSearch("Article");
+        Assert.assertEquals(actualSearchData,"automation article");
     }
 
 

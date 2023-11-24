@@ -15,6 +15,7 @@ public class LoginPage {
     private String dmDeskIcon = ".dam-home-icon.hidden-sm.hidden-xs";
 
     public LoginPage(Page page) {
+
         this.page = page;
     }
 

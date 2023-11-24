@@ -17,7 +17,7 @@ public class LoginTest extends BaseTest {
     @Test
     public void loginPageTitleTest(){
       String actualTitle   = loginPage.getLoginPageTitle();
-      Assert.assertEquals(actualTitle,"dm.desk1");
+      Assert.assertEquals(actualTitle,"dm.desk");
 
     }
 
