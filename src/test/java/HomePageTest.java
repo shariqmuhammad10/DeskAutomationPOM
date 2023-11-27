@@ -1,5 +1,8 @@
+import com.microsoft.playwright.Locator;
+import com.microsoft.playwright.Page;
 import io.qameta.allure.testng.TestInstanceParameter;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.ArticlePage;
 import pages.HomePage;
@@ -16,28 +19,38 @@ public class HomePageTest extends BaseTest {
         homePage.checkDmDeskIconIsVisible();
     }
 
+    @DataProvider
+    public Object[][] getSearchData (){
+        return new Object[][] {
+                {"automation article"},
+                {"Demo session"},
+                {"9.8.23 Stewart article 3"}
 
-    @Test (priority = 1)
-    public void generalSearch(){
-        homePage = loginPage.sharePage();
-        String actualSearchData = homePage.genericSearch("Article");
-        Assert.assertEquals(actualSearchData,"automation article");
+        };
+
     }
+
+    @Test (dataProvider = "getSearchData")
+    public void generalSearch(String articleName) {
+
+            homePage = loginPage.sharePage();
+            String actualSearchData = homePage.genericSearch(articleName);
+            Assert.assertEquals(actualSearchData, articleName);
+        }
 
 
 
     @Test (priority = 2)
     public void createArticle(){
-        homePage =loginPage.sharePage();
-     articlePage = homePage.createNewArticle();
+            homePage =loginPage.sharePage();
+            articlePage = homePage.createNewArticle();
 
     }
     @Test (priority = 3)
-
-       public void fullScreenOption()
+    public void fullScreenOption()
     {
-        homePage = loginPage.sharePage();
-        homePage.clickFullScreenOption();
+            homePage = loginPage.sharePage();
+            homePage.clickFullScreenOption();
 
     }
 

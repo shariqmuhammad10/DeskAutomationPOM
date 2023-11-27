@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_Suite" class="navigator-link">
-              <span class="suite-name border-passed">Default Suite</span>
+              <span class="suite-name border-failed">Default Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">3 methods, 2 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_Suite" class="hide-methods failed suite-Default_Suite"> (hide)</a> <!-- hide-methods failed suite-Default_Suite -->
+                      <a href="#" panel-name="suite-Default_Suite" class="show-methods failed suite-Default_Suite"> (show)</a> <!-- show-methods failed suite-Default_Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_Suite" title="HomePageTest" class="method navigator-link" hash-for-method="generalSearch(9.8.23 Stewart article 3)">generalSearch(9.8.23 Stewart article 3)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_Suite" title="HomePageTest" class="method navigator-link" hash-for-method="generalSearch(Demo session)">generalSearch(Demo session)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,7 +122,7 @@
                     <div class="method-list-content passed suite-Default_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_Suite" title="HomePageTest" class="method navigator-link" hash-for-method="generalSearch">generalSearch</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_Suite" title="HomePageTest" class="method navigator-link" hash-for-method="generalSearch(automation article)">generalSearch(automation article)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_Suite -->
@@ -118,6 +137,44 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_Suite" class="panel Default_Suite">
+          <div class="suite-Default_Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">HomePageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="generalSearch(9.8.23 Stewart article 3)">
+                  </a> <!-- generalSearch(9.8.23 Stewart article 3) -->
+                  <span class="method-name">generalSearch</span>
+                  <span class="parameters">(9.8.23 Stewart article 3)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [9.8.23 Stewart article 3] but found [automation article]
+	at HomePageTest.generalSearch(HomePageTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1510)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="generalSearch(Demo session)">
+                  </a> <!-- generalSearch(Demo session) -->
+                  <span class="method-name">generalSearch</span>
+                  <span class="parameters">(Demo session)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [Demo session] but found [automation article]
+	at HomePageTest.generalSearch(HomePageTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1510)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_Suite-class-failed -->
           <div class="suite-Default_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -126,9 +183,10 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="generalSearch">
-                  </a> <!-- generalSearch -->
+                  <a name="generalSearch(automation article)">
+                  </a> <!-- generalSearch(automation article) -->
                   <span class="method-name">generalSearch</span>
+                  <span class="parameters">(automation article)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -189,16 +247,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'generalSearch')
 data.setCell(0, 2, 'HomePageTest')
-data.setCell(0, 3, 5639);
+data.setCell(0, 3, 6455);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'generalSearch')
+data.setCell(1, 2, 'HomePageTest')
+data.setCell(1, 3, 3534);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'generalSearch')
+data.setCell(2, 2, 'HomePageTest')
+data.setCell(2, 3, 3396);
 window.suiteTableData['Default_Suite']= { tableData: data, tableDiv: 'times-div-Default_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <span class="suite-total-time">Total running time: 13 seconds</span>
               <div id="times-div-Default_Suite">
               </div> <!-- times-div-Default_Suite -->
             </div> <!-- times-div -->
@@ -221,23 +287,23 @@ return data;
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">checkSchedulingMenuVisibility</span>
                 <br/>
-                <span class="ignored-method-name">verifyDmDeskIconIsVisible</span>
-                <br/>
                 <span class="ignored-method-name">fullScreenOption</span>
                 <br/>
-                <span class="ignored-method-name">appLogout</span>
+                <span class="ignored-method-name">checkFoldersMenuVisibility</span>
+                <br/>
+                <span class="ignored-method-name">verifyDmDeskIconIsVisible</span>
+                <br/>
+                <span class="ignored-method-name">createArticle</span>
+                <br/>
+                <span class="ignored-method-name">clickRefreshBtn</span>
                 <br/>
                 <span class="ignored-method-name">checkFacetsVisibility</span>
                 <br/>
                 <span class="ignored-method-name">checkQuriesMenuVisibility</span>
                 <br/>
-                <span class="ignored-method-name">checkFoldersMenuVisibility</span>
-                <br/>
-                <span class="ignored-method-name">clickRefreshBtn</span>
+                <span class="ignored-method-name">appLogout</span>
                 <br/>
                 <span class="ignored-method-name">checkPseriesMenuVisibility</span>
-                <br/>
-                <span class="ignored-method-name">createArticle</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -255,12 +321,24 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">generalSearch</span>
-                <span class="method-start">5761 ms</span>
+                <span class="method-name">generalSearch(automation article)</span>
+                <span class="method-start">8044 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">generalSearch(Demo session)</span>
+                <span class="method-start">14549 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">generalSearch(9.8.23 Stewart article 3)</span>
+                <span class="method-start">17952 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">11435 ms</span>
+                <span class="method-start">21489 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -6,10 +6,8 @@
       <class name="HomePageTest">
         <methods>
           <include name="tearDown"/>
-          <include name="verifyDmDeskIconIsVisible"/>
           <include name="setup"/>
-          <include name="generalSearch"/>
-          <include name="createArticle"/>
+          <include name="generalSearch" invocation-numbers="1 2"/>
         </methods>
       </class> <!-- HomePageTest -->
     </classes>

@@ -9,10 +9,22 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default Suite</th></tr>
-<tr><td><a href="#t0">DeskAutomationPOM</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">11,580</td><td></td><td></td></tr>
+<tr><td><a href="#t0">DeskAutomationPOM</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">22,004</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">DeskAutomationPOM &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">HomePageTest</td><td><a href="#m0">generalSearch</a></td><td rowspan="1">1700847149651</td><td rowspan="1">5639</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">DeskAutomationPOM &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">HomePageTest</td><td><a href="#m0">generalSearch</a></td><td rowspan="2">1701019917427</td><td rowspan="2">3534</td></tr><tr class="failedeven"><td><a href="#m1">generalSearch</a></td></tr><tr><th colspan="4">DeskAutomationPOM &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">HomePageTest</td><td><a href="#m2">generalSearch</a></td><td rowspan="1">1701019907519</td><td rowspan="1">6455</td></tr></tbody>
 </table>
-<h2>DeskAutomationPOM</h2><h3 id="m0">HomePageTest#generalSearch</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>DeskAutomationPOM</h2><h3 id="m0">HomePageTest#generalSearch</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>9.8.23 Stewart article 3</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [9.8.23 Stewart article 3] but found [automation article]
+	at HomePageTest.generalSearch(HomePageTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1510)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">HomePageTest#generalSearch</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Demo session</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [Demo session] but found [automation article]
+	at HomePageTest.generalSearch(HomePageTest.java:38)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1510)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
+... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">HomePageTest#generalSearch</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>automation article</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
