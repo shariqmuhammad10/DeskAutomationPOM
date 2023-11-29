@@ -20,8 +20,8 @@ public class HomePageTest extends BaseTest {
     }
 
     @DataProvider
-    public Object[][] getSearchData (){
-        return new Object[][] {
+    public Object[][] getSearchData() {
+        return new Object[][]{
                 {"automation article"},
                 {"Demo session"},
                 {"9.8.23 Stewart article 3"}
@@ -30,77 +30,74 @@ public class HomePageTest extends BaseTest {
 
     }
 
-    @Test (dataProvider = "getSearchData")
+    @Test(dataProvider = "getSearchData")
     public void generalSearch(String articleName) {
 
-            homePage = loginPage.sharePage();
-            String actualSearchData = homePage.genericSearch(articleName);
-            Assert.assertEquals(actualSearchData, articleName);
-        }
-
-
-
-    @Test (priority = 2)
-    public void createArticle(){
-            homePage =loginPage.sharePage();
-            articlePage = homePage.createNewArticle();
-
+        homePage = loginPage.sharePage();
+        String actualSearchData = homePage.genericSearch(articleName);
+        Assert.assertEquals(actualSearchData, articleName);
     }
-    @Test (priority = 3)
-    public void fullScreenOption()
-    {
-            homePage = loginPage.sharePage();
-            homePage.clickFullScreenOption();
+
+
+    @Test(priority = 2)
+    public void createArticle() {
+        homePage = loginPage.sharePage();
+        articlePage = homePage.createNewArticle();
 
     }
 
- @Test (priority = 4)
-    public void checkFacetsVisibility (){
+    @Test(priority = 3)
+    public void fullScreenOption() {
+        homePage = loginPage.sharePage();
+        homePage.clickFullScreenOption();
+
+    }
+
+    @Test(priority = 4)
+    public void checkFacetsVisibility() {
         homePage = loginPage.sharePage();
         homePage.facetsAvailable();
         //Assert.assertTrue(true);
-       // return true;
- }
+        // return true;
+    }
 
-@Test (priority = 5)
-public void checkFoldersMenuVisibility (){
+    @Test(priority = 5)
+    public void checkFoldersMenuVisibility() {
         homePage = loginPage.sharePage();
         homePage.foldersMenuAvilable();
-}
+    }
 
 
-    @Test (priority = 6)
-    public void checkPseriesMenuVisibility (){
+    @Test(priority = 6)
+    public void checkPseriesMenuVisibility() {
         homePage = loginPage.sharePage();
         homePage.pseriesMenuAvilable();
     }
 
 
-    @Test (priority = 7)
-    public void checkQuriesMenuVisibility (){
+    @Test(priority = 7)
+    public void checkQuriesMenuVisibility() {
         homePage = loginPage.sharePage();
         homePage.quriesMenuAvilable();
     }
 
-    @Test (priority = 8)
-    public void checkSchedulingMenuVisibility (){
+    @Test(priority = 8)
+    public void checkSchedulingMenuVisibility() {
         homePage = loginPage.sharePage();
         homePage.schedulingMenuAvailable();
     }
 
-    @Test (priority = 9)
-    public void clickRefreshBtn (){
+    @Test(priority = 9)
+    public void clickRefreshBtn() {
         homePage = loginPage.sharePage();
         homePage.searchRefresh();
     }
-    @Test (priority = 10)
-    public void appLogout(){
-        homePage=loginPage.sharePage();
+
+    @Test(priority = 10)
+    public void appLogout() {
+        homePage = loginPage.sharePage();
         homePage.logoutFromSite();
     }
-
-
-
 
 
 }
