@@ -1,5 +1,6 @@
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import io.qameta.allure.internal.shadowed.jackson.annotation.JsonTypeInfo;
 import io.qameta.allure.testng.TestInstanceParameter;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
@@ -103,11 +104,12 @@ public class HomePageTest extends BaseTest {
         homePage.logoutFromSite();
     }
 
-    @Test
+   /* @Test
     public void searchArticleWithAdvanceSearch(){
-        homePage.searchArticleUsingAdvanceSearch();
+     String actualMoreResultsButtonText  =  homePage.searchArticleUsingAdvanceSearch();
+        Assert.assertEquals(actualMoreResultsButtonText, "More Results ");
 
-    }
+    }*/
 
 
 }

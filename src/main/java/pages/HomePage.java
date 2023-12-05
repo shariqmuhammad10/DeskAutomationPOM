@@ -3,6 +3,7 @@ package pages;
 import com.microsoft.playwright.Page;
 
 
+
 public class HomePage  {
    private Page page;
 
@@ -17,12 +18,14 @@ public class HomePage  {
 
    private String advanceSearchDD = "#advanced-search";
 
+   private String moreResultsBtn = "#laodMoreResultBtn";
+
    private String nameInAdvanceSearchDD = "input[placeholder='Name']";
 
    private String searchInHeadLineinAdvDD = "input[placeholder='Search in the headline']";
 
-   private String last7DayOptionInDD = "div[class='search-field ng-scope search-field-type-bool-radio search-field-attr-allarchive'] div[class='ng-scope'] div:nth-child(1) label:nth-child(1)";
-
+  // private String last7DayOptionInDD = "div[class='search-field ng-scope search-field-type-bool-radio search-field-attr-allarchive'] div[class='ng-scope'] div:nth-child(1) label:nth-child(1)";
+   private String allDaysRadioInAdvSrchDD= "div[class='search-field ng-scope search-field-type-bool-radio search-field-attr-allarchive'] div:nth-child(2) label:nth-child(1)";
    private String serachedArticle = "a[title='automation article'] span[class='ng-binding ng-scope']";
 
    private String fullScreen= ".fullscreen-toggle";
@@ -67,14 +70,20 @@ public class HomePage  {
    }
 
    public void facetsAvailable(){
+
       page.isVisible(facetMenu);
    }
 
-   public void searchArticleUsingAdvanceSearch (){
+   public String searchArticleUsingAdvanceSearch (){
       page.click(advanceSearchDD);
+      page.click(allDaysRadioInAdvSrchDD);
       page.click(nameInAdvanceSearchDD);
       page.fill(nameInAdvanceSearchDD,"Test");
       page.click(searchBtnInAdvanceSearchDD);
+      String moreResults = page.textContent(moreResultsBtn);
+
+      System.out.println("Searched content is :" + moreResults);
+      return moreResults;
 
    }
 
