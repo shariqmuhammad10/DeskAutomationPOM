@@ -1,0 +1,45 @@
+{
+  "cookies": [
+    {
+      "name": "lastClient",
+      "value": "8276260202923568501",
+      "domain": "10.70.172.129",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "http://10.70.172.129",
+      "localStorage": [
+        {
+          "name": "LastURL",
+          "value": ""
+        },
+        {
+          "name": "copyfit.loc.98",
+          "value": "REMOTE_sysadmin_0185b58c-8748-4321-840c-c1bdcb45e18d"
+        },
+        {
+          "name": "copyfit.session.98",
+          "value": "20853460"
+        },
+        {
+          "name": "printstyles.loc.98",
+          "value": ""
+        },
+        {
+          "name": "language",
+          "value": "en"
+        },
+        {
+          "name": "printstyles.session.98",
+          "value": ""
+        }
+      ]
+    }
+  ]
+}
