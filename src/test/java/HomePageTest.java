@@ -78,7 +78,7 @@ public class HomePageTest extends BaseTest {
     public void checkPseriesMenuVisibility() {
         //homePage = loginPage.sharePage();
         String actualPSeriesMenuText = homePage.pseriesMenuAvilable();
-        Assert.assertEquals(actualPSeriesMenuText,"Folders");
+        Assert.assertEquals(actualPSeriesMenuText,"P-Series");
     }
 
 

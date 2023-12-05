@@ -102,7 +102,7 @@ public class HomePage  {
 
    public String pseriesMenuAvilable(){
       page.isVisible(pSeriesMenu);
-       String pSeriesText = page.textContent(foldersMenu);
+       String pSeriesText = page.textContent(pSeriesMenu);
        System.out.println("Searched content is :" + pSeriesText);
        return pSeriesText;
 
