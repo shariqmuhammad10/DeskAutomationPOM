@@ -2,8 +2,6 @@ package pages;
 
 import com.microsoft.playwright.Page;
 
-import java.net.SocketTimeoutException;
-
 
 public class HomePage  {
    private Page page;
@@ -11,9 +9,11 @@ public class HomePage  {
    //Locators
    private String dmDeskIcon = ".dam-home-icon.hidden-sm.hidden-xs";
 
-   private String genSearch = "#searchvalueinput";
+   private String genSearchInput = "#searchvalueinput";
 
-   private String searchBtn = "#simple-search";
+   private String genricSearchBtn = "#simple-search";
+
+   private String searchBtnInAdvanceSearchDD = "span[ng-if='!editName']";
 
    private String advanceSearchDD = "#advanced-search";
 
@@ -70,6 +70,14 @@ public class HomePage  {
       page.isVisible(facetMenu);
    }
 
+   public void searchArticleUsingAdvanceSearch (){
+      page.click(advanceSearchDD);
+      page.click(nameInAdvanceSearchDD);
+      page.fill(nameInAdvanceSearchDD,"Test");
+      page.click(searchBtnInAdvanceSearchDD);
+
+   }
+
 
 
    public void foldersMenuAvilable(){
@@ -99,8 +107,8 @@ public class HomePage  {
 
 
    public String genericSearch(String articleName){
-      page.fill(genSearch,articleName);
-      page.click(searchBtn);
+      page.fill(genSearchInput,articleName);
+      page.click(genricSearchBtn);
       //String searchData = page.textContent(serachedArticle);
       //page.locator(serachedArticle).waitFor();
       String searchData = page.textContent(serachedArticle);

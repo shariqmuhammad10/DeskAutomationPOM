@@ -103,5 +103,11 @@ public class HomePageTest extends BaseTest {
         homePage.logoutFromSite();
     }
 
+    @Test
+    public void searchArticleWithAdvanceSearch(){
+        homePage.searchArticleUsingAdvanceSearch();
+
+    }
+
 
 }
