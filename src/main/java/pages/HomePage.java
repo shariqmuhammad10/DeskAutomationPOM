@@ -69,9 +69,12 @@ public class HomePage  {
       System.out.println("Full screen is visible...");
    }
 
-   public void facetsAvailable(){
+   public String facetsAvailable(){
 
       page.isVisible(facetMenu);
+       String facetMenuText = page.textContent(facetMenu);
+       System.out.println("Searched content is :" + facetMenuText);
+       return facetMenuText;
    }
 
    public String searchArticleUsingAdvanceSearch (){
@@ -89,18 +92,28 @@ public class HomePage  {
 
 
 
-   public void foldersMenuAvilable(){
+   public String foldersMenuAvilable(){
       page.isVisible(foldersMenu);
+       String folderMenuText = page.textContent(foldersMenu);
+       System.out.println("Searched content is :" + folderMenuText);
+       return folderMenuText;
 
    }
 
-   public void pseriesMenuAvilable(){
+   public String pseriesMenuAvilable(){
       page.isVisible(pSeriesMenu);
+       String pSeriesText = page.textContent(foldersMenu);
+       System.out.println("Searched content is :" + pSeriesText);
+       return pSeriesText;
+
 
    }
 
-   public void quriesMenuAvilable(){
+   public String quriesMenuAvilable(){
       page.isVisible(quriesMenu);
+       String quriesMenuText = page.textContent(quriesMenu);
+       System.out.println("Searched content is :" + quriesMenuText);
+       return quriesMenuText;
 
    }
 

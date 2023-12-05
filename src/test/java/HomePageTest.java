@@ -61,29 +61,32 @@ public class HomePageTest extends BaseTest {
     @Test(priority = 4)
     public void checkFacetsVisibility() {
         //homePage = loginPage.sharePage();
-        homePage.facetsAvailable();
-        //Assert.assertTrue(true);
+        String actualFacetMenu = homePage.facetsAvailable();
+        Assert.assertEquals(actualFacetMenu,"Facets");
         // return true;
     }
 
     @Test(priority = 5)
     public void checkFoldersMenuVisibility() {
         //homePage = loginPage.sharePage();
-        homePage.foldersMenuAvilable();
+        String actualFolderMenuText = homePage.foldersMenuAvilable();
+        Assert.assertEquals(actualFolderMenuText,"Folders");
     }
 
 
     @Test(priority = 6)
     public void checkPseriesMenuVisibility() {
         //homePage = loginPage.sharePage();
-        homePage.pseriesMenuAvilable();
+        String actualPSeriesMenuText = homePage.pseriesMenuAvilable();
+        Assert.assertEquals(actualPSeriesMenuText,"Folders");
     }
 
 
     @Test(priority = 7)
     public void checkQuriesMenuVisibility() {
-        homePage = loginPage.sharePage();
-        homePage.quriesMenuAvilable();
+        //homePage = loginPage.sharePage();
+        String actualQuriesMenuText = homePage.quriesMenuAvilable();
+        Assert.assertEquals(actualQuriesMenuText,"Queries");
     }
 
     @Test(priority = 8)
