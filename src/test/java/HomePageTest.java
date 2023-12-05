@@ -91,8 +91,9 @@ public class HomePageTest extends BaseTest {
 
     @Test(priority = 8)
     public void checkSchedulingMenuVisibility() {
-        homePage = loginPage.sharePage();
-        homePage.schedulingMenuAvailable();
+        //homePage = loginPage.sharePage();
+        String actualSchedulingMenuText = homePage.schedulingMenuAvailable();
+        Assert.assertEquals(actualSchedulingMenuText,"Scheduling");
     }
 
     @Test(priority = 9)

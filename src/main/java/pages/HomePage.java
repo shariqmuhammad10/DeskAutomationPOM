@@ -117,8 +117,11 @@ public class HomePage  {
 
    }
 
-   public void schedulingMenuAvailable(){
+   public String schedulingMenuAvailable(){
       page.isVisible(schedulingMenu);
+       String schedulingMenuText = page.textContent(schedulingMenu);
+       System.out.println("Searched content is :" + schedulingMenuText);
+       return schedulingMenuText;
 
    }
 
