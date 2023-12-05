@@ -15,6 +15,14 @@ public class HomePage  {
 
    private String searchBtn = "#simple-search";
 
+   private String advanceSearchDD = "#advanced-search";
+
+   private String nameInAdvanceSearchDD = "input[placeholder='Name']";
+
+   private String searchInHeadLineinAdvDD = "input[placeholder='Search in the headline']";
+
+   private String last7DayOptionInDD = "div[class='search-field ng-scope search-field-type-bool-radio search-field-attr-allarchive'] div[class='ng-scope'] div:nth-child(1) label:nth-child(1)";
+
    private String serachedArticle = "a[title='automation article'] span[class='ng-binding ng-scope']";
 
    private String fullScreen= ".fullscreen-toggle";
@@ -61,6 +69,8 @@ public class HomePage  {
    public void facetsAvailable(){
       page.isVisible(facetMenu);
    }
+
+
 
    public void foldersMenuAvilable(){
       page.isVisible(foldersMenu);
