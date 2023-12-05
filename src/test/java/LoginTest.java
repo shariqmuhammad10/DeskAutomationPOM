@@ -22,9 +22,9 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    public String loginPageURLTest() {
+    public void loginPageURLTest() {
         String actualURL = loginPage.getLoginpageUrl();
         Assert.assertEquals(actualURL, prop.getProperty("url"));
-        return actualURL;
+        //return actualURL;
     }
 }

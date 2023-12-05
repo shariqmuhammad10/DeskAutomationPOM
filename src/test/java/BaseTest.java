@@ -30,11 +30,11 @@ public class BaseTest {
         page = pf.initBrowser(prop);
        // loginTest.appLoginTest();
         //page = pf.appLogin(Properties prop);
-        page = pf.appLogin("sysadmin","sysadmin");
+        //page = pf.appLogin("sysadmin","sysadmin");
+        page = pf.appLogin(prop.getProperty("userName"),prop.getProperty("passWord"));
         loginPage = new LoginPage(page);
-
-
-        }
+        homePage = loginPage.sharePage();
+    }
 
         //loginPage.doLogin(prop.getProperty("userName").trim(),
                 //prop.getProperty("passWord").trim());
