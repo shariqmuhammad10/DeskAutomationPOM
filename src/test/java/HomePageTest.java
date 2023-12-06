@@ -32,10 +32,7 @@ public class HomePageTest extends BaseTest {
 
     }
 
-//    @BeforeTest
-//    public void before() {
-//
-//    }
+
 
     @Test(dataProvider = "getSearchData")
     public void generalSearch(String articleName) {
@@ -62,7 +59,7 @@ public class HomePageTest extends BaseTest {
     public void checkFacetsVisibility() {
         //homePage = loginPage.sharePage();
         String actualFacetMenu = homePage.facetsAvailable();
-        Assert.assertEquals(actualFacetMenu,"Facets");
+        Assert.assertEquals(actualFacetMenu,"Facets1");
         // return true;
     }
 
