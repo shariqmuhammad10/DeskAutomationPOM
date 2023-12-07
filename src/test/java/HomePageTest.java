@@ -105,12 +105,12 @@ public class HomePageTest extends BaseTest {
         homePage.logoutFromSite();
     }
 
-   /* @Test
+    @Test
     public void searchArticleWithAdvanceSearch(){
      String actualMoreResultsButtonText  =  homePage.searchArticleUsingAdvanceSearch();
         Assert.assertEquals(actualMoreResultsButtonText, "More Results ");
 
-    }*/
+    }
 
 
 }
