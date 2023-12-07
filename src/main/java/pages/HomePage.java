@@ -134,9 +134,11 @@ public class HomePage  {
    public String genericSearch(String articleName){
       page.fill(genSearchInput,articleName);
       page.click(genricSearchBtn);
+       //page.locator(serachedArticle).waitFor();
       //String searchData = page.textContent(serachedArticle);
       //page.locator(serachedArticle).waitFor();
       String searchData = page.textContent(serachedArticle);
+
 
       System.out.println("Searched content is :" + searchData);
       return searchData;

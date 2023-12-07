@@ -25,8 +25,8 @@ public class HomePageTest extends BaseTest {
     public Object[][] getSearchData() {
         return new Object[][]{
                 {"automation article"},
-                {"Demo session"},
-                {"9.8.23 Stewart article 3"}
+                {"Slots"},
+                //{"Test"}
 
         };
 
@@ -35,8 +35,9 @@ public class HomePageTest extends BaseTest {
 
 
     @Test(dataProvider = "getSearchData")
-    public void generalSearch(String articleName) {
+    public void generalSearch(String articleName)  {
         String actualSearchData = homePage.genericSearch(articleName);
+
         Assert.assertEquals(actualSearchData, articleName);
     }
 
