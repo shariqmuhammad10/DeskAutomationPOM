@@ -24,9 +24,9 @@ public class HomePageTest extends BaseTest {
     @DataProvider
     public Object[][] getSearchData() {
         return new Object[][]{
-                {"automation article"}
-                //{"Demo session"},
-                //{"9.8.23 Stewart article 3"}
+                {"automation article"},
+                {"Demo session"},
+                {"9.8.23 Stewart article 3"}
 
         };
 
@@ -59,7 +59,7 @@ public class HomePageTest extends BaseTest {
     public void checkFacetsVisibility() {
         //homePage = loginPage.sharePage();
         String actualFacetMenu = homePage.facetsAvailable();
-        Assert.assertEquals(actualFacetMenu,"Facets1");
+        Assert.assertEquals(actualFacetMenu,"Facets");
         // return true;
     }
 
