@@ -14,6 +14,8 @@ public class HomePage  {
 
    private String genricSearchBtn = "#simple-search";
 
+   private String searchRefreshPage = "#dam-refresh-button";
+
    private String searchBtnInAdvanceSearchDD = "span[ng-if='!editName']";
 
    private String advanceSearchDD = "#advanced-search";
@@ -26,7 +28,12 @@ public class HomePage  {
 
   // private String last7DayOptionInDD = "div[class='search-field ng-scope search-field-type-bool-radio search-field-attr-allarchive'] div[class='ng-scope'] div:nth-child(1) label:nth-child(1)";
    private String allDaysRadioInAdvSrchDD= "div[class='search-field ng-scope search-field-type-bool-radio search-field-attr-allarchive'] div:nth-child(2) label:nth-child(1)";
-   private String serachedArticle = "a[title='automation article'] span[class='ng-binding ng-scope']";
+
+   private String serachedArticle = ".ng-binding.ng-scope[ng-if='text']";
+
+   //private String serachedArticle = "a[title='automation article'] span[class='ng-binding ng-scope']";
+
+   //.ng-binding.ng-scope[ng-if='text']
 
    private String fullScreen= ".fullscreen-toggle";
 
@@ -56,6 +63,10 @@ public class HomePage  {
       this.page = page;
    }
 
+
+    public ArticlePage shareArticlePage(){
+        return new ArticlePage(page);
+    }
 
    // Actions
    public void checkDmDeskIconIsVisible() {
@@ -134,12 +145,12 @@ public class HomePage  {
    public String genericSearch(String articleName){
       page.fill(genSearchInput,articleName);
       page.click(genricSearchBtn);
-       //page.locator(serachedArticle).waitFor();
+      page.click(searchRefreshPage);
+      page.waitForTimeout(10000);
+       //page.locator(articleName).waitFor();
       //String searchData = page.textContent(serachedArticle);
       //page.locator(serachedArticle).waitFor();
       String searchData = page.textContent(serachedArticle);
-
-
       System.out.println("Searched content is :" + searchData);
       return searchData;
 

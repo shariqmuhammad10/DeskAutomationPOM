@@ -34,6 +34,7 @@ public class BaseTest {
         page = pf.appLogin(prop.getProperty("userName"),prop.getProperty("passWord"));
         loginPage = new LoginPage(page);
         homePage = loginPage.sharePage();
+        articlePage = homePage.shareArticlePage();
     }
 
         //loginPage.doLogin(prop.getProperty("userName").trim(),
