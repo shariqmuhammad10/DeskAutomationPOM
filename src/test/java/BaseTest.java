@@ -1,13 +1,12 @@
-import com.beust.ah.A;
+import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.Page;
 import factory.PlaywrightFactory;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import pages.ArticlePage;
 import pages.HomePage;
 import pages.LoginPage;
+import pages.AddPagePage;
 
 import java.io.FileNotFoundException;
 import java.util.Properties;
@@ -20,12 +19,14 @@ public class BaseTest {
     protected LoginPage loginPage;
     protected HomePage homePage;
     protected ArticlePage articlePage;
-
+    protected AddPagePage addPagePage;
+    BrowserContext context;
 
 
     @BeforeClass
     public void setup() throws FileNotFoundException {
         pf = new PlaywrightFactory();
+        context = pf.getBrowserContext();
         prop = pf.init_prop();
         page = pf.initBrowser(prop);
        // loginTest.appLoginTest();
@@ -34,7 +35,7 @@ public class BaseTest {
         page = pf.appLogin(prop.getProperty("userName"),prop.getProperty("passWord"));
         loginPage = new LoginPage(page);
         homePage = loginPage.sharePage();
-        articlePage = homePage.shareArticlePage();
+        //articlePage = homePage.navigateToCreateArticlePage();
     }
 
         //loginPage.doLogin(prop.getProperty("userName").trim(),

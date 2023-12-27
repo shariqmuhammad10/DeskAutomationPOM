@@ -76,6 +76,10 @@ public class PlaywrightFactory {
                 return prop;
         }
 
+    public BrowserContext getBrowserContext() {
+        return browserContext;
+    }
+
     public Page appLogin(String appUserName, String appPassWord) {
         page.fill(userName, appUserName);
         page.fill(passWord, appPassWord);

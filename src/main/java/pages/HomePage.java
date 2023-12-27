@@ -59,6 +59,16 @@ public class HomePage  {
    private String schedulingMenu = "//span[normalize-space()='Scheduling']";
 
 
+   private String foldermenuOptions = "#dropdownFoldersMenu";
+
+   private String createNewFolderfromOptionList = "button[ng-click='addFolder(false)']";
+
+   private String newFolderName = "The Folder Name";
+   private String doneBtnForFolder = ".btn.btn-default.btn-primary.ng-binding";
+
+   private String deskFolder = ".ng-binding.selected";
+
+
    public HomePage(Page page) {
       this.page = page;
    }
@@ -168,8 +178,34 @@ public class HomePage  {
 
    }
 
+   public ArticlePage navigateToCreateArticlePage(){
+       page.click(createNewDD);
+       page.click(createArticle);
+       page = page.context().waitForPage(() -> {});
+       return new ArticlePage(page) ;
+   }
+
+   public void createNewFolder(){
+       page.click(foldersMenu);
+       page.click(deskFolder);
+
+
+       page.click(createNewFolderfromOptionList);
+       page.getByPlaceholder(newFolderName);
+       page.fill(newFolderName,"Auto Folder create");
+
+       page.click(doneBtnForFolder);
+
+   }
 
 
 
 
+    public AddPagePage navigatetocreateNewPage() {
+        page.click(createNewDD);
+        page.click(createPage);
+        page = page.context().waitForPage(() -> {});
+        return new AddPagePage(page) ;
+
+    }
 }

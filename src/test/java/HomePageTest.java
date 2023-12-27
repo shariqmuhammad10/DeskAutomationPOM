@@ -44,8 +44,8 @@ public class HomePageTest extends BaseTest {
     @Test(priority = 2)
     public void createArticle() {
         homePage = loginPage.sharePage();
-        articlePage = homePage.createNewArticle();
-
+        //articlePage = homePage.createNewArticle();
+        homePage.createNewArticle();
     }
 
     @Test(priority = 3)
@@ -109,6 +109,13 @@ public class HomePageTest extends BaseTest {
     public void searchArticleWithAdvanceSearch(){
      String actualMoreResultsButtonText  =  homePage.searchArticleUsingAdvanceSearch();
         Assert.assertEquals(actualMoreResultsButtonText, "More Results ");
+
+    }
+
+    @Test
+    public void createNewSimpleFolder(){
+        homePage.createNewFolder();
+
 
     }
 
