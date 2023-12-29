@@ -2,6 +2,7 @@ package pages;
 
 import com.microsoft.playwright.Page;
 
+import java.util.logging.XMLFormatter;
 
 
 public class HomePage  {
@@ -63,12 +64,22 @@ public class HomePage  {
 
    private String createNewFolderfromOptionList = "button[ng-click='addFolder(false)']";
 
+   private String clickOnThreeDots = "#dropdownFoldersMenu";
+
+   private String deleteSeletedFolder = ".btn.btn-default.ng-binding[ng-really-click='deleteFolder()']";
+
    private String newFolderName = "The Folder Name";
    private String doneBtnForFolder = ".btn.btn-default.btn-primary.ng-binding";
 
-   private String deskFolder = ".ng-binding.selected";
+   private String deskFolder = "ul[class='ng-scope'] span[class='ng-binding']";
 
+   private String newlyCreatedFolderName = "span:has-text('Automated Simple folder')";
 
+   //private String confirmDeleteFolderOK = ".btn.ng-binding.btn-danger[x-ng-hide='confirm && !verified']";
+
+    private String confirmDeleteFolderOK = "button:has-text('OK')";
+
+    private String clickOndeleteMessagePopUP = "h4[class='ng-binding']";
    public HomePage(Page page) {
       this.page = page;
    }
@@ -185,19 +196,29 @@ public class HomePage  {
        return new ArticlePage(page) ;
    }
 
-   public void createNewFolder(){
+   public String createNewFolder(){
        page.click(foldersMenu);
        page.click(deskFolder);
-
-
+       page.click(clickOnThreeDots);
        page.click(createNewFolderfromOptionList);
-       page.getByPlaceholder(newFolderName);
-       page.fill(newFolderName,"Auto Folder create");
-
+       page.getByPlaceholder(newFolderName).fill("Automated Simple folder");
        page.click(doneBtnForFolder);
+       String newFolderName = page.locator(newlyCreatedFolderName).last().textContent();
+       System.out.println(newFolderName);
+       return newFolderName;
 
    }
 
+   public void deleteNewlyCreatedFolder(){
+       page.click(foldersMenu);
+       page.click(deskFolder);
+       page.locator(newlyCreatedFolderName).last().click();
+       page.click(clickOnThreeDots);
+       page.click(deleteSeletedFolder);
+       page.click(clickOndeleteMessagePopUP);
+       page.locator(confirmDeleteFolderOK).first().hover();
+       page.locator(confirmDeleteFolderOK).first().click();
+   }
 
 
 

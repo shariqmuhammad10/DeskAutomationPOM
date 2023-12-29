@@ -46,19 +46,11 @@ public void createArticle(){
         //page.click(placeHolderArticleName);
         //page.getByPlaceholder("Name of Article goes here...","Automation Article");
             page.getByPlaceholder(nameOfArticleusingPH).fill("Automation Article 27-12-2023");
+            page.locator(headLineIframe).hover();
+            page.hover(headLineIframe);
+            page.click(headLineIframe);
+            page.fill(headLineIframe,"dont mess up");
 
-
-    //String editorSelector = "your-selector-for-the-rich-text-editor";
-    String editor = page.frameLocator(headLineIframe).locator("p").textContent();
-    page.fill("p","Test values");
-    System.out.println(header);
-    //page.fill(headLineIframe,"This is test data for the editor");
-
-
-
-
-    //page.fill(headLineIframe,"data need to insert");
-            //page.fill(headerDetials,"This is a testing article and Only filled for the testing purpose.");
             page.click(saveButton);
         //page.fill(placeHolderArticleName,"Automation article name");
 

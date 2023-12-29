@@ -114,10 +114,17 @@ public class HomePageTest extends BaseTest {
 
     @Test
     public void createNewSimpleFolder(){
-        homePage.createNewFolder();
+       String createdFolderName =  homePage.createNewFolder();
+        Assert.assertEquals(createdFolderName,"Automated Simple folder");
 
 
     }
 
 
+    @Test
+
+    public void deleteSimpleFolder(){
+        homePage.deleteNewlyCreatedFolder();
+
+    }
 }
