@@ -1,15 +1,6 @@
-import com.microsoft.playwright.Locator;
-import com.microsoft.playwright.Page;
-import io.qameta.allure.internal.shadowed.jackson.annotation.JsonTypeInfo;
-import io.qameta.allure.testng.TestInstanceParameter;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import pages.ArticlePage;
-import pages.HomePage;
-
-import java.util.PriorityQueue;
 
 public class HomePageTest extends BaseTest {
 
@@ -66,7 +57,7 @@ public class HomePageTest extends BaseTest {
     @Test(priority = 5)
     public void checkFoldersMenuVisibility() {
         //homePage = loginPage.sharePage();
-        String actualFolderMenuText = homePage.foldersMenuAvilable();
+        String actualFolderMenuText = homePage.foldersMenuAvailable();
         Assert.assertEquals(actualFolderMenuText,"Folders");
     }
 
@@ -74,7 +65,7 @@ public class HomePageTest extends BaseTest {
     @Test(priority = 6)
     public void checkPseriesMenuVisibility() {
         //homePage = loginPage.sharePage();
-        String actualPSeriesMenuText = homePage.pseriesMenuAvilable();
+        String actualPSeriesMenuText = homePage.pseriesMenuAvailable();
         Assert.assertEquals(actualPSeriesMenuText,"P-Series");
     }
 
@@ -82,7 +73,7 @@ public class HomePageTest extends BaseTest {
     @Test(priority = 7)
     public void checkQuriesMenuVisibility() {
         //homePage = loginPage.sharePage();
-        String actualQuriesMenuText = homePage.quriesMenuAvilable();
+        String actualQuriesMenuText = homePage.quriesMenuAvailable();
         Assert.assertEquals(actualQuriesMenuText,"Queries");
     }
 

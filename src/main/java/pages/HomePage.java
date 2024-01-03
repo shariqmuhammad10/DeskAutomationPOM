@@ -1,8 +1,10 @@
 package pages;
 
+import com.microsoft.playwright.Dialog;
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
-import java.util.logging.XMLFormatter;
+
 
 
 public class HomePage  {
@@ -75,9 +77,10 @@ public class HomePage  {
 
    private String newlyCreatedFolderName = "span:has-text('Automated Simple folder')";
 
+
    //private String confirmDeleteFolderOK = ".btn.ng-binding.btn-danger[x-ng-hide='confirm && !verified']";
 
-    private String confirmDeleteFolderOK = "button:has-text('OK')";
+    private String confirmDeleteFolderOK = ".modal-footer button";
 
     private String clickOndeleteMessagePopUP = "h4[class='ng-binding']";
    public HomePage(Page page) {
@@ -124,7 +127,7 @@ public class HomePage  {
 
 
 
-   public String foldersMenuAvilable(){
+   public String foldersMenuAvailable(){
       page.isVisible(foldersMenu);
        String folderMenuText = page.textContent(foldersMenu);
        System.out.println("Searched content is :" + folderMenuText);
@@ -132,7 +135,7 @@ public class HomePage  {
 
    }
 
-   public String pseriesMenuAvilable(){
+   public String pseriesMenuAvailable(){
       page.isVisible(pSeriesMenu);
        String pSeriesText = page.textContent(pSeriesMenu);
        System.out.println("Searched content is :" + pSeriesText);
@@ -141,7 +144,7 @@ public class HomePage  {
 
    }
 
-   public String quriesMenuAvilable(){
+   public String quriesMenuAvailable(){
       page.isVisible(quriesMenu);
        String quriesMenuText = page.textContent(quriesMenu);
        System.out.println("Searched content is :" + quriesMenuText);
@@ -215,9 +218,24 @@ public class HomePage  {
        page.locator(newlyCreatedFolderName).last().click();
        page.click(clickOnThreeDots);
        page.click(deleteSeletedFolder);
-       page.click(clickOndeleteMessagePopUP);
-       page.locator(confirmDeleteFolderOK).first().hover();
-       page.locator(confirmDeleteFolderOK).first().click();
+
+       /*page.onceDialog(Dialog:: accept);   //UNABLE TO CLICK ON THE ok BUTTON TO DELETE FOLDER
+       page.onDialog(dialog -> {
+           String text = dialog.message();
+               System.out.println(text);
+           dialog.accept();
+       });*/
+       //page.click(clickOndeleteMessagePopUP);
+       //page.waitForSelector(confirmDeleteFolderOK);
+       //page.locator(confirmDeleteFolderOK).all().get(3).focus();
+       page.locator(confirmDeleteFolderOK).all().get(3).click(new Locator.ClickOptions
+               ().setDelay(2000));
+
+       for (String allInnerText : page.locator(confirmDeleteFolderOK).allInnerTexts()) {
+           System.out.println(allInnerText);
+       }
+
+       //page.locator(confirmDeleteFolderOK).first().click();
    }
 
 

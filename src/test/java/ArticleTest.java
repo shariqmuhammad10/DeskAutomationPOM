@@ -6,7 +6,6 @@ public class ArticleTest extends BaseTest {
     public void articlePageTitleTest() {
 
         articlePage = homePage.navigateToCreateArticlePage();
-
         articlePage.createArticle();
     }
 
