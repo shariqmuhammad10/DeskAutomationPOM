@@ -1,10 +1,10 @@
 package pages;
 
-import com.microsoft.playwright.Dialog;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
-
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class HomePage  {
@@ -76,7 +76,6 @@ public class HomePage  {
    private String deskFolder = "ul[class='ng-scope'] span[class='ng-binding']";
 
    private String newlyCreatedFolderName = "span:has-text('Automated Simple folder')";
-
 
    //private String confirmDeleteFolderOK = ".btn.ng-binding.btn-danger[x-ng-hide='confirm && !verified']";
 
@@ -204,7 +203,8 @@ public class HomePage  {
        page.click(deskFolder);
        page.click(clickOnThreeDots);
        page.click(createNewFolderfromOptionList);
-       page.getByPlaceholder(newFolderName).fill("Automated Simple folder");
+       createSimpleFolderName();
+       //page.getByPlaceholder(newFolderName).fill("Automated Simple folder");
        page.click(doneBtnForFolder);
        String newFolderName = page.locator(newlyCreatedFolderName).last().textContent();
        System.out.println(newFolderName);
@@ -228,11 +228,11 @@ public class HomePage  {
        //page.click(clickOndeleteMessagePopUP);
        //page.waitForSelector(confirmDeleteFolderOK);
        //page.locator(confirmDeleteFolderOK).all().get(3).focus();
-       page.locator(confirmDeleteFolderOK).all().get(3).click(new Locator.ClickOptions
-               ().setDelay(2000));
+      // page.locator(confirmDeleteFolderOK).all().get(3).click(new Locator.ClickOptions
+              // ().setDelay(2000));
 
        for (String allInnerText : page.locator(confirmDeleteFolderOK).allInnerTexts()) {
-           System.out.println(allInnerText);
+           //System.out.println(allInnerText);
        }
 
        //page.locator(confirmDeleteFolderOK).first().click();
@@ -246,5 +246,13 @@ public class HomePage  {
         page = page.context().waitForPage(() -> {});
         return new AddPagePage(page) ;
 
+    }
+
+    public void createSimpleFolderName(){
+
+        SimpleDateFormat dateTimeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String currentDateTime = dateTimeFormat.format(new Date());
+        String folderNameWithCurrentDate = "AutoSF " + currentDateTime;
+        page.getByPlaceholder(newFolderName).fill(folderNameWithCurrentDate);
     }
 }

@@ -47,6 +47,7 @@ public class ArticlePage  {
     private String headlineDiv = "#cke_5_contents";
 
     private String header;
+    //private String integratedSearch = "input[placeholder='Search']";
 
 
     public ArticlePage shareArticlePage(){
@@ -62,16 +63,27 @@ public void createArticle(){
     page.waitForSelector(headLineIframe);
     page.frameLocator(headLineIframe).locator("html")
             .locator("body")
-            .type("This is new headline for testing ");
+            .type("Latest Technologies in Computer Science- ");
 
     page.frameLocator(subHeadingIframe).locator("html")
             .locator("body")
-            .type("This is subheading ");
+            .type("Edge Computing- ");
 
     page.frameLocator(bodyIframe).locator("html")
             .locator("body")
-            .type("This is the text provided for the testing purpose , we need to fill up the data" +
-                    " and we are going to type the new details of the article. ");
+            .type("In contrast to cloud computing, which processes and stores data in massive data centres far away from the end user, edge computing keeps computer data close to the user. " +
+                    "Experts predict that the cloud will not totally disappear, but rather will coexist with edge computing as it puts processing closer to consumers, " +
+                    "speeding everything from factory output to self-driving car reaction."+
+                    "Edge computing is used in technologies such as autonomous vehicles, video conferencing, and augmented reality. " +
+                    "Edge computing, for example, reduces the delay of waiting for a server in the cloud to respond when an autonomous car makes a split-second choice to brake and avoid a collision."+
+           " Software engineers, " +"especially edge computing software developers, are expected to expand by 22% between 2019 and 2029, according to the BLS, with a median annual pay of $110,140 in 2020."+
+    "Workers with edge computing skills are employed in industries such as telecommunications, security, and oil and gas. " +
+                    "A bachelor’s degree is frequently required for entry-level employment such as software developer or computer network architect. " +
+                    "A master’s degree is commonly required for managerial, administrative, and research employment.");
+
+
+
+
 
 
             //page.click(goToMediaTab);

@@ -106,7 +106,7 @@ public class HomePageTest extends BaseTest {
     @Test
     public void createNewSimpleFolder(){
        String createdFolderName =  homePage.createNewFolder();
-        Assert.assertEquals(createdFolderName,"Automated Simple folder");
+        Assert.assertEquals(createdFolderName,"AutoSF ");
 
 
     }
